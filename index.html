@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WordPress Org Plugin Support Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 70vh;
+        }
+
+        #header, #footer {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            margin-top: 5px;
+        }
+
+        #footer {
+            background-color: #007bff;
+            padding: 15px;
+            margin-bottom: 0px;
+            margin-top: 30px;
+        }
+
+        #footer p a {color: aliceblue;}
+
+        #footer p a:hover{color: azure;}
+
+        .button-container {
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>WordPress Org Plugin Support Check</h1>
+    </div>
+
+    <div class="button-container">
+        <button class="button" id="htPluginsBtn">HT Plugins</button>
+        <button class="button" id="hasThemesBtn">HasThemes</button>
+        <button class="button" id="devItemsBtn">DevItem LLC</button>
+    </div>
+
+    <div id="footer">
+        <p>Created By <a href="https://hasthemes.com/">HasThemes LTD.</a> </p>
+    </div>
+
+    <script>
+        const pluginSlugs = {
+            htPlugins: [
+                "ht-contactform",
+                "data-captia",
+                "docus",
+                "ever-compare",
+                "extensions-for-cf7",
+                "faster-youtube-embed",
+                "ht-easy-google-analytics",
+                "ht-feed",
+                "ht-instagram",
+                "ht-mega-for-wpbakery",
+                "ht-newsletter-for-elementor",
+                "ht-portfolio",
+                "ht-slider-for-elementor",
+                "ht-social-share",
+                "insert-headers-and-footers-script",
+                "just-tables",
+                "quickswish",
+                "really-simple-google-tag-manager",
+                "whols",
+                "wishsuite",
+                "wp-news-magazine",
+                "ht-team-member",
+                "ht-wpform",
+            ],
+            hasThemes: [
+                "coupon-zen",
+                "99fy-core",
+                "product-screenshot",
+                "ht-builder",
+                "ht-menu-lite",
+                "pixelavo",
+                "preview-link-generator",
+                "sirve",
+                "swatchly",
+                "wc-sales-notification",
+                "wp-education",
+                "wp-plugin-manager",
+                "wptemplata",
+            ],
+            devItems: [
+                "hashbar-wp-notification-bar",
+                "ht-blocks",
+                "ht-event",
+                "ht-mega-for-elementor",
+                "ht-service",
+                "woolentor-addons",
+                "wc-builder",
+                "wp-politic",
+                "wp-education",
+                "wp-film-studio",
+                "wp-insurance",
+                "support-genix-lite",
+            ]
+        };
+
+        document.getElementById("htPluginsBtn").addEventListener("click", function() {
+            openLinksInNewTabs(pluginSlugs.htPlugins);
+        });
+
+        document.getElementById("hasThemesBtn").addEventListener("click", function() {
+            openLinksInNewTabs(pluginSlugs.hasThemes);
+        });
+
+        document.getElementById("devItemsBtn").addEventListener("click", function() {
+            openLinksInNewTabs(pluginSlugs.devItems);
+        });
+
+        function openLinksInNewTabs(slugs) {
+            slugs.forEach(slug => {
+                const link = `https://wordpress.org/support/plugin/${slug}/`;
+                window.open(link, "_blank");
+            });
+        }
+    </script>
+</body>
+</html>
